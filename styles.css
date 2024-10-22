@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: Montserrat;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.bg-image {
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; 
+}
+
+.bg-image img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    filter: blur(4px);
+}
+
+.logo {
+    width: 60%;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 400px;
+    height: 450px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    text-align: center;
+    color: #FCB53E;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255,0.5);
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgb(0, 0, 0,0.4);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+}
+label a{
+    text-decoration: none;
+    color: #fff;
+}
+input[type="submit"] {
+    background-color: #FCB53E;
+    color: #DE1F31;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 40px; /* Added margin to the submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #DE1F31;
+    color: #FCB53E;
+    transition: 1s;
+}
+#shareContainer {
+    margin-top: 20px;
+}
+
+#shareContainer a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #007bff; /* Example color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#shareContainer a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

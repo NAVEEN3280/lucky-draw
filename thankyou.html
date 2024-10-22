@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="th.css">
+</head>
+<body>
+    <div class="bg-image">
+        <img src="img/bg.jpg" alt="background-image">
+    </div>
+    <div class="content">
+        <h1 id="thankYouMessage"></h1>
+        <p id="thankYouDetails"></p>
+        <h3>Winner</h3>
+        <p>Will be announced on</p>
+        <h3>1st Jan 2025</h3>
+        <p>on our</p>
+        <div class="social">
+           <a href="https://www.instagram.com/saptingala_ind/" target="_blank"><i class="fa-brands fa-instagram"></i><span>||</span></a>
+           <a href="https://www.facebook.com/profile.php?id=61560103084095" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const status = params.get('status');
+        const message = params.get('message');
+
+        // Display the personalized message
+        if (status === 'success') {
+            document.getElementById('thankYouMessage').textContent = `Thanks for submitting, ${name}!`;
+            document.getElementById('thankYouDetails').textContent = "Your entry has been successfully recorded. We appreciate your participation in our lucky draw!";
+        } else if (status === 'error') {
+            document.getElementById('thankYouMessage').textContent = "Submission Error!";
+            document.getElementById('thankYouDetails').textContent = message || "There was an unexpected error. Please try again.";
+        } else {
+            document.getElementById('thankYouMessage').textContent = "Thank you for your submission!";
+            document.getElementById('thankYouDetails').textContent = "Your entry has been recorded.";
+        }
+    </script>
+</body>
+</html>
